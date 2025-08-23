@@ -2,10 +2,9 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
 import { Badge } from '@/components/ui/badge.jsx'
-import { Heart, Star, ShoppingBag, Phone, Instagram, MessageCircle, Filter, Search } from 'lucide-react'
+import { Heart, Star, ShoppingBag, Instagram, MessageCircle, Filter } from 'lucide-react'
 import './App.css'
 
-// Importar imagens
 import jogoAmericano from './assets/jogo-americano.webp'
 import floresCroche from './assets/flores-croche.jpeg'
 import tapeteColorido from './assets/tapete-colorido.jpg'
@@ -121,20 +120,20 @@ function App() {
             </span>
           </h2>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Peças únicas de crochê, personalizadas especialmente para você. 
+            Peças únicas de crochê, personalizadas especialmente para você.
             Escolha suas cores favoritas e tamanhos ideais.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800"
               onClick={() => document.getElementById('catalogo').scrollIntoView({ behavior: 'smooth' })}
             >
               <ShoppingBag className="w-5 h-5 mr-2" />
               Ver Catálogo
             </Button>
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               variant="outline"
               onClick={() => abrirWhatsApp({ nome: 'Catálogo Geral', preco: '' })}
             >
@@ -157,7 +156,7 @@ function App() {
           <div className="mb-8 flex flex-col md:flex-row gap-4 justify-center">
             <div className="flex items-center gap-2">
               <Filter className="w-4 h-4 text-gray-500" />
-              <select 
+              <select
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
                 className="border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -169,7 +168,7 @@ function App() {
             </div>
             <div className="flex items-center gap-2">
               <div className="w-4 h-4 rounded-full bg-gradient-to-r from-pink-400 to-purple-400"></div>
-              <select 
+              <select
                 value={selectedColor}
                 onChange={(e) => setSelectedColor(e.target.value)}
                 className="border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -186,8 +185,8 @@ function App() {
             {produtosFiltrados.map(produto => (
               <Card key={produto.id} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                 <div className="relative overflow-hidden rounded-t-lg">
-                  <img 
-                    src={produto.imagem} 
+                  <img
+                    src={produto.imagem}
                     alt={produto.nome}
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
@@ -209,17 +208,16 @@ function App() {
                     <span className="text-2xl font-bold text-blue-600">{produto.preco}</span>
                     <div className="flex gap-1">
                       {produto.cores.slice(0, 3).map((cor, index) => (
-                        <div 
+                        <div
                           key={index}
-                          className={`w-4 h-4 rounded-full border-2 border-white shadow-sm ${
-                            cor === 'branco' ? 'bg-gray-100' :
-                            cor === 'bege' ? 'bg-amber-100' :
-                            cor === 'rosa' ? 'bg-pink-300' :
-                            cor === 'azul' ? 'bg-blue-400' :
-                            cor === 'verde' ? 'bg-green-400' :
-                            cor === 'multicolor' ? 'bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400' :
-                            'bg-gray-300'
-                          }`}
+                          className={`w-4 h-4 rounded-full border-2 border-white shadow-sm ${cor === 'branco' ? 'bg-gray-100' :
+                              cor === 'bege' ? 'bg-amber-100' :
+                                cor === 'rosa' ? 'bg-pink-300' :
+                                  cor === 'azul' ? 'bg-blue-400' :
+                                    cor === 'verde' ? 'bg-green-400' :
+                                      cor === 'multicolor' ? 'bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400' :
+                                        'bg-gray-300'
+                            }`}
                         />
                       ))}
                       {produto.cores.length > 3 && (
@@ -227,7 +225,7 @@ function App() {
                       )}
                     </div>
                   </div>
-                  <Button 
+                  <Button
                     className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800"
                     onClick={() => abrirWhatsApp(produto)}
                   >
@@ -246,9 +244,9 @@ function App() {
         <div className="max-w-4xl mx-auto text-center">
           <h3 className="text-3xl font-bold text-gray-900 mb-6">Sobre a Maresia</h3>
           <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-            Cada peça da Maresia Crochê é criada com muito amor e atenção aos detalhes. 
-            Trabalhamos com fios de alta qualidade e técnicas tradicionais para garantir 
-            que você receba um produto único e duradouro. Personalizamos cores e tamanhos 
+            Cada peça da Maresia Crochê é criada com muito amor e atenção aos detalhes.
+            Trabalhamos com fios de alta qualidade e técnicas tradicionais para garantir
+            que você receba um produto único e duradouro. Personalizamos cores e tamanhos
             para que cada cliente tenha exatamente o que deseja.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -285,7 +283,7 @@ function App() {
             Pronta para fazer seu pedido? Entre em contato conosco!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
+            <Button
               size="lg"
               className="bg-green-600 hover:bg-green-700"
               onClick={() => window.open('https://wa.me/55557196789255', '_blank')}
@@ -293,7 +291,7 @@ function App() {
               <MessageCircle className="w-5 h-5 mr-2" />
               WhatsApp
             </Button>
-            <Button 
+            <Button
               size="lg"
               variant="outline"
               onClick={() => window.open('https://instagram.com/lojamaresia_croche', '_blank')}
