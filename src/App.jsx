@@ -139,7 +139,7 @@ function App() {
                 Mar e da Praia
               </span>
             </h2>
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-black-00 mb-8 max-w-3xl mx-auto">
               Peças únicas de crochê, inspiradas nas cores do mar.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
