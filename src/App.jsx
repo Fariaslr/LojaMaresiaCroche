@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge.jsx'
 import { Heart, Star, ShoppingBag, Instagram, MessageCircle, Filter } from 'lucide-react'
 import './App.css'
+import { motion } from "framer-motion";
 
 import jogoAmericano from './assets/jogo-americano.webp'
 import floresCroche from './assets/flores-croche.jpeg'
@@ -259,43 +260,54 @@ function App() {
           </div>
         </section>
 
+
         {/* Sobre */}
-        <section id="sobre" className="py-16 px-4 sm:px-6 lg:px-8 relative">
-          {/* Overlay para contraste */}
-          <div className="absolute inset-0 bg-black/20"></div>
-          <div className="max-w-4xl mx-auto text-center">
-            <h3 className="text-3xl font-bold text-gray-900 mb-6">Sobre a Maresia</h3>
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+        <section id="sobre" className="relative py-20 px-4 sm:px-6 lg:px-8">
+          {/* Fundo fixo com overlay */}
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-fixed"
+            style={{ backgroundImage: `url(${imageBackground})` }}
+          />
+          <div className="absolute inset-0 bg-black/40" /> {/* Overlay mais forte */}
+
+          {/* Conteúdo */}
+          <div className="relative max-w-5xl mx-auto text-center text-white">
+            <h3 className="text-3xl font-bold mb-6">Sobre a Maresia</h3>
+            <p className="text-lg mb-10 leading-relaxed">
               Cada peça da Maresia Crochê é criada com muito amor e atenção aos detalhes.
               Trabalhamos com fios de alta qualidade e técnicas tradicionais para garantir
               que você receba um produto único e duradouro. Personalizamos cores e tamanhos
               para que cada cliente tenha exatamente o que deseja.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
                   <Heart className="w-8 h-8 text-white" />
                 </div>
                 <h4 className="text-xl font-semibold mb-2">Feito com Amor</h4>
-                <p className="text-gray-600">Cada ponto é feito com carinho e dedicação</p>
+                <p className="text-gray-200">Cada ponto é feito com carinho e dedicação</p>
               </div>
+
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
                   <Star className="w-8 h-8 text-white" />
                 </div>
                 <h4 className="text-xl font-semibold mb-2">Qualidade Premium</h4>
-                <p className="text-gray-600">Utilizamos apenas fios de alta qualidade</p>
+                <p className="text-gray-200">Utilizamos apenas fios de alta qualidade</p>
               </div>
+
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
                   <ShoppingBag className="w-8 h-8 text-white" />
                 </div>
                 <h4 className="text-xl font-semibold mb-2">Personalização</h4>
-                <p className="text-gray-600">Cores e tamanhos sob medida para você</p>
+                <p className="text-gray-200">Cores e tamanhos sob medida para você</p>
               </div>
             </div>
           </div>
         </section>
+
 
         {/* Contato */}
         <section id="contato" className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
@@ -329,9 +341,9 @@ function App() {
         <footer className="bg-gray-900 text-white py-8 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">
             <div className="flex items-center justify-center space-x-2 mb-4">
-              <div className="w-6 h-6 bg-gradient-to-br from-blue-400 to-orange-400 rounded-full flex items-center justify-center">
-                <Heart className="w-3 h-3 text-white" />
-              </div>
+              <div className="w-8 h-8 bg-gradient-to-br from-sky-500 to-cyan-400 rounded-full flex items-center justify-center">
+                  <Waves className="w-5 h-5 text-white" />
+                </div>
               <h4 className="text-xl font-bold">Maresia Crochê</h4>
             </div>
             <p className="text-gray-400 mb-4">Artesanato feito com carinho e dedicação</p>
@@ -341,7 +353,9 @@ function App() {
           </div>
         </footer>
       </div>
+      
     </div>
+    
   )
 }
 
