@@ -1,4 +1,7 @@
 import React from 'react'
+import { Button } from './ui/button'
+import { ShoppingBag } from 'lucide-react'
+import { MessageCircle } from 'lucide-react'
 
 export default function Hero() {
   return (
