@@ -20,46 +20,7 @@ function App() {
   const [selectedColor, setSelectedColor] = useState('todas')
 
   const produtos = [
-    {
-      id: 1,
-      nome: 'Jogo Americano Artesanal',
-      categoria: 'mesa',
-      preco: 'R$ 45,00',
-      cores: ['branco', 'bege', 'rosa'],
-      imagem: jogoAmericano,
-      descricao: 'Jogo americano em crochê feito à mão, perfeito para decorar sua mesa.',
-      rating: 5
-    },
-    {
-      id: 2,
-      nome: 'Flores Decorativas',
-      categoria: 'decoracao',
-      preco: 'R$ 25,00',
-      cores: ['rosa', 'azul', 'verde', 'roxo'],
-      imagem: floresCroche,
-      descricao: 'Lindas flores de crochê para decoração, disponíveis em várias cores.',
-      rating: 5
-    },
-    {
-      id: 3,
-      nome: 'Tapete Colorido Redondo',
-      categoria: 'tapetes',
-      preco: 'R$ 120,00',
-      cores: ['multicolor', 'azul', 'verde'],
-      imagem: tapeteColorido,
-      descricao: 'Tapete redondo vibrante e colorido, ideal para sala ou quarto.',
-      rating: 5
-    },
-    {
-      id: 4,
-      nome: 'Tapete Oval Tradicional',
-      categoria: 'tapetes',
-      preco: 'R$ 95,00',
-      cores: ['multicolor', 'bege', 'marrom'],
-      imagem: tapeteElo7,
-      descricao: 'Tapete oval em estilo tradicional, perfeito para ambientes aconchegantes.',
-      rating: 4
-    },
+
     {
       id: 5,
       nome: 'Bolsa Madame',
